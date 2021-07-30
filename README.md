@@ -1,4 +1,4 @@
-# ad_exchange
+# cimitra_win_user_admin
 45 Common Actions For Active Directory and Exchange User Accounts
 
 **[INSTALL]**
