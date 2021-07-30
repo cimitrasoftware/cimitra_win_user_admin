@@ -9,11 +9,11 @@ Install the Cimitra's Windows Users Administration Script with the command below
 
 **iwr https://git.io/JBwuL | iex**
 
-Go to the directory c:\cimitra\scripts\ad
+Go to the directory c:\cimitra\scripts\cimitra_win_user_admin
 
-cd c:\cimitra\scripts\ad
+cd c:\cimitra\scripts\cimitra_win_user_admin
 
-Run: ./cimitra_active_directory_and_exchange.ps1
+Run: ./cimitra_win_user_admin.ps1
 
 Edit the settings.cfg file to specify the Exclude Group. See more about the Exclude Group below. 
 
@@ -25,10 +25,16 @@ Or you can modify only one or some attributes of an existing Active Directory or
 
 Here is how you could create a user in Active Directory, and add several attributes to that user. 
 
-.\cimitra_win_user_admin.ps1 -AddToActiveDirectory -FirstName "Bob" -LastName "Jones" -ContextIn "OU=ADMINISTRATION,OU=DEMOUSERS,DC=cimitrademo,DC=com" -SamAccountName "bjones" -Title "Controller" -DefaultPassword "abc_4242" -ManagerFirstName "Steve" -ManagerLastName "McQueen" -ManagerContext "OU=ADMINISTRATION,OU=DEMOUSERS,DC=cimitrademo,DC=com" -Description "Accounting Department Employee" -OfficePhone "801-111-2222" -MobilePhone "801-333-3333" -ExpirationDate "02/20/2035"
+**[ADDING A USER TO ACTIVE DIRECTORY]**
+
+.\cimitra_win_user_admin.ps1 -AddToActiveDirectory -FirstName "Bob" -LastName "Jones" -ContextIn "OU=ADMINISTRATION,OU=USERS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=com" -SamAccountName "bjones" -Title "Controller" -DefaultPassword "abc_4242" -ManagerFirstName "Steve" -ManagerLastName "McQueen" -ManagerContext "OU=ADMINISTRATION,OU=DEMOUSERS,DC=cimitrademo,DC=com" -Description "Accounting Department Employee" -OfficePhone "801-111-2222" -MobilePhone "801-333-3333" -ExpirationDate "02/20/2035"
+
+**[ADDING A USER TO ACTIVE DIRECTORY FROM A TEMPLATE USER]**
+
+.\cimitra_win_user_admin.ps1 -NewUserTemplate "CN=_TEMPLATE_ADMINISTRATION,OU=ADMINISTRATION,OU=USERS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=com" -NewUserTemplateProperties "City,Company,Country,HomeDirectory,HomeDrive,MemberOf,ScriptPath,State,streetAddress,postalCode,title,department,company,Manager,wWWHomePage,proxyAddresses" -FirstName "Bob" -LastName "Jones" -SamAccountName "bjones" -Title "Controller" -UserPassword "abc_4242" -ManagerFirstName "Steve" -ManagerLastName "McQueen" -ManagerContext "OU=ADMINISTRATION,OU=DEMOUSERS,DC=cimitrademo,DC=com" -Description "Accounting Department Employee" -OfficePhone "801-111-2222" -MobilePhone "801-333-3333" -ExpirationDate "02/20/2035"
 
 Tested and developed on a Windows 2016 and Windows 2019 Server
-Initially released on April 28th, 2021
+Initially released on July 30th, 2021
 
 Here are the actions you can take with this script. 
 
