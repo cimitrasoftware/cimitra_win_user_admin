@@ -1,4 +1,17 @@
 # cimitra_win_user_admin
+**Cimitra's Windows Administration Practice**
+![edir_practice_main_screen](https://user-images.githubusercontent.com/55113746/123368617-5c1a1f00-d539-11eb-842e-4010b50c7bc3.JPG)
+
+**Cimitra's Windows Administration Practice**
+Important Sections Below
+**[INSTALL]**
+**[SCRIPT PURPOSE]**
+**[POWERSHELL 5 LIMITATION]**
+**[IMPORTING CIMITRA ACTIONS DESIGNED WITH THIS SCRIPT]**
+**[EXCLUDE GROUP]**
+
+
+
 45 Common Actions For Active Directory and Exchange User Accounts
 
 **[INSTALL]**
