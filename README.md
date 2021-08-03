@@ -28,7 +28,9 @@ Here is how you could create a user in Active Directory, and add several attribu
 **[POWERSHELL 5 LIMITATION]**
 
 If you have an Active Directory OU with spaces anywhere in the path of the OU, then you must use must make sure to install PowerShell 7 in order to use this script. 
+
 This Will Work With PowerShell 5: .\cimitra_win_user_admin.ps1 -ContextIn "OU=ADMINISTRATION,OU=USERS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=com"
+
 This **Will NOT Work** With PowerShell 5: .\cimitra_win_user_admin.ps1 -ContextIn "OU=ADMIN STAFF,OU=USERS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=com"
 
 **[IMPORTING CIMITRA ACTIONS DESIGNED WITH THIS SCRIPT]**
