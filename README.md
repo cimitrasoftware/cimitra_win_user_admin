@@ -10,7 +10,7 @@ Important Sections Below
 
 **[SCRIPT PURPOSE]**
 
-**[POWERSHELL 5 LIMITATION]**
+**[ONE POWERSHELL 5 LIMITATION]**
 
 **[IMPORTING CIMITRA ACTIONS DESIGNED WITH THIS SCRIPT]**
 
@@ -21,7 +21,7 @@ Important Sections Below
 
 **[INSTALL]**
 
-In a Powershell 7 or PowerShell 5 Terminal Session (PowerShell 7 is a lot better choice)
+In a Powershell 7 or PowerShell 5 Terminal Session (PowerShell 7 is the best)
 
 Install the Cimitra's Windows Users Administration Script with the command below. Copy and paste command below in your PowerShell terminal on a Windows Server that has the Cimitra Agent for Windows installed. This same Windows Server should also be an Active Directory Domain Controller. 
 
@@ -41,7 +41,7 @@ This script allows for dozens of modifications you can make to Active Directory 
 
 Or you can modify only one or some attributes of an existing Active Directory or Exchange User account. 
 
-**[POWERSHELL 5 LIMITATION]**
+**[ONE POWERSHELL 5 LIMITATION]**
 
 If you have an Active Directory OU with spaces anywhere in the path of the OU, then you must use must make sure to install PowerShell 7 in order to use this script. 
 
