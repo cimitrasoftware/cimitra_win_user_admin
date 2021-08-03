@@ -25,6 +25,23 @@ Or you can modify only one or some attributes of an existing Active Directory or
 
 Here is how you could create a user in Active Directory, and add several attributes to that user. 
 
+**[POWERSHELL 5 LIMITATION]**
+
+If you have an Active Directory OU with spaces anywhere in the path of the OU, then you must use must make sure to install PowerShell 7 in order to use this script. 
+This Will Work With PowerShell 5: .\cimitra_win_user_admin.ps1 -ContextIn "OU=ADMINISTRATION,OU=USERS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=com"
+This **Will NOT Work** With PowerShell 5: .\cimitra_win_user_admin.ps1 -ContextIn "OU=ADMIN STAFF,OU=USERS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=com"
+
+**[IMPORTING CIMITRA ACTIONS DESIGNED WITH THIS SCRIPT]**
+
+1. Go to the Cimitra server: app.cimitra.com
+2. Log in as: import@cimitra.com | Password: 123
+3. Look at any Cimitra Action you would like to import into your Cimitra System
+4. Copy the IMPORT URL to the clipboard
+5. In your own Cimitra System select Create | Import
+6. Copy in the URL from step #4 
+7. Select Import
+8. Associate the Action with a Cimitra Agent deployed on an Active Directory Domain Controller
+
 **[ADDING A USER TO ACTIVE DIRECTORY]**
 
 .\cimitra_win_user_admin.ps1 -AddToActiveDirectory -FirstName "Bob" -LastName "Jones" -ContextIn "OU=ADMINISTRATION,OU=USERS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=com" -SamAccountName "bjones" -Title "Controller" -DefaultPassword "abc_4242" -ManagerFirstName "Steve" -ManagerLastName "McQueen" -ManagerContext "OU=ADMINISTRATION,OU=DEMOUSERS,DC=cimitrademo,DC=com" -Description "Accounting Department Employee" -OfficePhone "801-111-2222" -MobilePhone "801-333-3333" -ExpirationDate "02/20/2035"
