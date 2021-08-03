@@ -6,11 +6,14 @@
 **Cimitra's Windows Administration Practice**
 Important Sections Below
 **[INSTALL]**
-**[SCRIPT PURPOSE]**
-**[POWERSHELL 5 LIMITATION]**
-**[IMPORTING CIMITRA ACTIONS DESIGNED WITH THIS SCRIPT]**
-**[EXCLUDE GROUP]**
 
+**[SCRIPT PURPOSE]**
+
+**[POWERSHELL 5 LIMITATION]**
+
+**[IMPORTING CIMITRA ACTIONS DESIGNED WITH THIS SCRIPT]**
+
+**[EXCLUDE GROUP]**
 
 
 45 Common Actions For Active Directory and Exchange User Accounts
