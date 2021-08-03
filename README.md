@@ -2,6 +2,7 @@
 **Cimitra's Windows Administration Practice**
 ![cimitra_win_user_admin](https://user-images.githubusercontent.com/55113746/127966108-9ac5b0e0-9b89-41aa-aa3d-ba83bc31307e.JPG)
 
+![VIDEO README!](https://www.loom.com/share/0c24006add8f4ebebeb8b4dd12bfd564)
 
 **Cimitra's Windows Administration Practice**
 Important Sections Below
