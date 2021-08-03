@@ -1,6 +1,7 @@
 # cimitra_win_user_admin
 **Cimitra's Windows Administration Practice**
-![edir_practice_main_screen](https://user-images.githubusercontent.com/55113746/123368617-5c1a1f00-d539-11eb-842e-4010b50c7bc3.JPG)
+![cimitra_win_user_admin](https://user-images.githubusercontent.com/55113746/127966108-9ac5b0e0-9b89-41aa-aa3d-ba83bc31307e.JPG)
+
 
 **Cimitra's Windows Administration Practice**
 Important Sections Below
