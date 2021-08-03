@@ -50,6 +50,7 @@ This Will Work With PowerShell 5: .\cimitra_win_user_admin.ps1 -ContextIn "OU=AD
 This **Will NOT Work** With PowerShell 5: .\cimitra_win_user_admin.ps1 -ContextIn "OU=ADMIN STAFF,OU=USERS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=com"
 
 **[IMPORTING CIMITRA ACTIONS DESIGNED WITH THIS SCRIPT]**
+
 ![cimitra_win_admin_create_user](https://user-images.githubusercontent.com/55113746/127967407-2dd8ae8a-3db1-449f-a8ef-4b55a60ffc7d.gif)
 (Looping Animated GIF)
 1. Go to the Cimitra server: [app.cimitra.com](https://app.cimitra.com)
@@ -62,7 +63,7 @@ This **Will NOT Work** With PowerShell 5: .\cimitra_win_user_admin.ps1 -ContextI
 8. Associate the Action with a Cimitra Agent deployed on an Active Directory Domain Controller
 9. Make changes to imported Actions, specifically related to the DIVISION (Context) and GroupGUID parameters etc. 
 
-**[ADDING A USER TO ACTIVE DIRECTORY]**
+**[ADDING A USER TO ACTIVE DIRECTORY]** Watch Animated GIF, And - Read the written steps below
 
 Here is how you could create a user in Active Directory, and add several attributes to that user. 
 
