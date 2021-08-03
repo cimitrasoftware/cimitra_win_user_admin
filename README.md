@@ -51,7 +51,7 @@ This **Will NOT Work** With PowerShell 5: .\cimitra_win_user_admin.ps1 -ContextI
 
 **[IMPORTING CIMITRA ACTIONS DESIGNED WITH THIS SCRIPT]**
 ![cimitra_win_admin_create_user](https://user-images.githubusercontent.com/55113746/127967407-2dd8ae8a-3db1-449f-a8ef-4b55a60ffc7d.gif)
-
+(Looping Animated GIF)
 1. Go to the Cimitra server: [app.cimitra.com](https://app.cimitra.com)
 2. Log in as: import@cimitra.com | Password: 123
 3. Look at any Cimitra Action you would like to import into your Cimitra System
@@ -60,6 +60,7 @@ This **Will NOT Work** With PowerShell 5: .\cimitra_win_user_admin.ps1 -ContextI
 6. Copy in the URL from step #4 
 7. Select Import
 8. Associate the Action with a Cimitra Agent deployed on an Active Directory Domain Controller
+9. Make changes to imported Actions, specifically related to the DIVISION (Context) and GroupGUID parameters etc. 
 
 **[ADDING A USER TO ACTIVE DIRECTORY]**
 
