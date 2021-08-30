@@ -128,10 +128,14 @@ Here are the actions you can take with this script.
 44. Run a command/script after the Cimitra script has run
 45. Run a commmand/script and pass the SamAccountName to the command 
 46. Run an Email Address report for a user in Active Directory
-47. Create a new user from a copy of a Template User Object, then modify the HomeDrive and HomeDirectory attributes
-48. Create a new Actuve Directory user, and then update attributes of the new user from a Template User Object
+47. Create a new user from a copy of a Template User Object
+48. Create a new Actuve Directory user, and then update attributes of the new user from a Template User Object 
 49. Create a new Exchange user, and then update attributes of the new user from a Template User Object
 50. Modify an Active Directory user, and then update attributes of the new user from a Template User Object
+
+NOTE: When using a Template User Object the following attributes will also be updated: 
+The HomeDirectory attribute will reflect the SamAccountName of the new user if the SamAccountName is in the Template User's HomeDrive
+The User will be added to the same Group Memberships that the Template User Object is a member of (Except the Cimitra Exclude Group)
 
 **ADDITIONAL FUNCTIONALITY**
 
