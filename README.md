@@ -19,7 +19,7 @@ Important Sections Below
 **[EXCLUDE GROUP]**
 
 
-45 Common Actions For Active Directory and Exchange User Accounts
+50 Actions For Active Directory and Exchange User Accounts
 
 **[INSTALL]**
 
@@ -128,6 +128,10 @@ Here are the actions you can take with this script.
 44. Run a command/script after the Cimitra script has run
 45. Run a commmand/script and pass the SamAccountName to the command 
 46. Run an Email Address report for a user in Active Directory
+47. Create a new user from a copy of a Template User Object, then modify the HomeDrive and HomeDirectory attributes
+48. Create a new Actuve Directory user, and then update attributes of the new user from a Template User Object
+49. Create a new Exchange user, and then update attributes of the new user from a Template User Object
+50. Modify an Active Directory user, and then update attributes of the new user from a Template User Object
 
 **ADDITIONAL FUNCTIONALITY**
 
