@@ -1,5 +1,5 @@
 # cimitra_win_user_admin
-**Cimitra's Windows Administration Practice**
+**Cimitra's Windows User Administration Practice**
 ![cimitra_win_user_admin](https://user-images.githubusercontent.com/55113746/127966108-9ac5b0e0-9b89-41aa-aa3d-ba83bc31307e.JPG)
 
 **VIDEO README BELOW**
