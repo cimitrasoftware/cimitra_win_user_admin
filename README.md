@@ -50,8 +50,7 @@ This **Will NOT Work** With PowerShell 5: .\cimitra_win_user_admin.ps1 -ContextI
 **[IMPORTING CIMITRA ACTIONS DESIGNED WITH THIS SCRIPT - POWERSHELL 7]**
 [DOWNLOAD PDF HERE](https://github.com/cimitrasoftware/cimitra_win_user_admin/raw/main/configure_and_import.pdf)
 
-**[IMPORTING CIMITRA ACTIONS DESIGNED WITH THIS SCRIPT - POWERSHELL 5]** Watch Animated GIF, Read Steps Below
-[WATCH VIDEO BELOW]
+**[IMPORTING CIMITRA ACTIONS DESIGNED WITH THIS SCRIPT - POWERSHELL 5]** Watch Animated GIF and Read Steps Below
 ![cimitra_win_admin_create_user](https://user-images.githubusercontent.com/55113746/127967407-2dd8ae8a-3db1-449f-a8ef-4b55a60ffc7d.gif)
 (Looping Animated GIF)
 1. Go to the Cimitra server: [app.cimitra.com](https://app.cimitra.com)
