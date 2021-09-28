@@ -2,9 +2,6 @@
 **Cimitra's Windows User Administration Practice**
 ![cimitra_win_user_admin](https://user-images.githubusercontent.com/55113746/127966108-9ac5b0e0-9b89-41aa-aa3d-ba83bc31307e.JPG)
 
-**VIDEO README BELOW**
-https://www.loom.com/share/0c24006add8f4ebebeb8b4dd12bfd564
-
 **Cimitra's Windows Administration Practice**
 Important Sections Below
 
@@ -17,7 +14,6 @@ Important Sections Below
 **[IMPORTING CIMITRA ACTIONS DESIGNED WITH THIS SCRIPT]**
 
 **[EXCLUDE GROUP]**
-
 
 50 Actions For Active Directory and Exchange User Accounts
 
@@ -79,6 +75,33 @@ Here is how you could create a user in Active Directory from a Template User Obj
 
 Tested and developed on a Windows 2016 and Windows 2019 Server
 Initially released on July 30th, 2021
+
+
+**[RUNNING REMOTELY AGAINST ANOTHER ACTIVE DIRECTORY TREE]**
+
+The Cimitra Windows Adminsitration Practice allow the scripts against a different Active Directory Tree. For example, on a Windows 10 Workstation that doesn't even need to be in the same Windows domain as the Active Directory Tree to be administered. 
+
+**Prerequisties**
+1. This solution has only been tested using PowerShell 7, only use PowerShell 7 or greater. 
+2. The Windows computer that has the Cimitra Windows Administration Practice must have Microsoft's Remote Server Administration Tools installed. 
+3. A Cimitra Agent is deployed to the same Windows machine where the Cimitra Windows Administration Practice scripts are installed. 
+
+**Configuration Steps**
+1. Assuming the practice is already installed, log into Windows machine as a user who the Cimitra Agent will be configured to run the Cimitra Agent as that user in the Windows Services App. 
+2. Open up a PowerShell 7 session as an Administrator
+3. Go to the directory c:\cimitra\scripts\cimitra_win_user_admin
+
+cd c:\cimitra\scripts\cimitra_win_user_admin
+
+Run: ./setup.ps1
+
+4. Choose the option to "Define a Remote Active Directory Tree"
+5. When the setup wizard runs, you should have a new settings file in c:\cimitra\scripts\cimitra_win_user_admin\cfg
+6. If all is successful, then a document should come up that tells you how to go through a process of Importing Actions, Saving Off Parameters, And Merging the Saved Parameters into a slew of Cimitra Actions that you can import for Administering Active Directory through Cimitra. 
+
+If for some reason the document doesn't come up, here is a copy of that document. [CLICK HERE]
+
+
 
 Here are the actions you can take with this script. 
 
