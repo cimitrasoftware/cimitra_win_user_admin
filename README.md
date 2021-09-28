@@ -47,8 +47,11 @@ This Will Work With PowerShell 5: .\cimitra_win_user_admin.ps1 -ContextIn "OU=AD
 
 This **Will NOT Work** With PowerShell 5: .\cimitra_win_user_admin.ps1 -ContextIn "OU=ADMIN STAFF,OU=USERS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=com"
 
-**[IMPORTING CIMITRA ACTIONS DESIGNED WITH THIS SCRIPT]** Watch Animated GIF, Read Steps Below
+**[IMPORTING CIMITRA ACTIONS DESIGNED WITH THIS SCRIPT - POWERSHELL 7]**
+[DOWNLOAD PDF HERE](https://github.com/cimitrasoftware/cimitra_win_user_admin/raw/main/configure_and_import.pdf)
 
+**[IMPORTING CIMITRA ACTIONS DESIGNED WITH THIS SCRIPT - POWERSHELL 5]** Watch Animated GIF, Read Steps Below
+[WATCH VIDEO BELOW]
 ![cimitra_win_admin_create_user](https://user-images.githubusercontent.com/55113746/127967407-2dd8ae8a-3db1-449f-a8ef-4b55a60ffc7d.gif)
 (Looping Animated GIF)
 1. Go to the Cimitra server: [app.cimitra.com](https://app.cimitra.com)
@@ -99,10 +102,10 @@ Run: ./setup.ps1
 5. When the setup wizard runs, you should have a new settings file in c:\cimitra\scripts\cimitra_win_user_admin\cfg
 6. If all is successful, then a document should come up that tells you how to go through a process of Importing Actions, Saving Off Parameters, And Merging the Saved Parameters into a slew of Cimitra Actions that you can import for Administering Active Directory through Cimitra. 
 
-If for some reason the document doesn't come up, here is a copy of that document. [CLICK HERE]
+If for some reason the document doesn't come up, here is a copy of that document" [DOWNLOAD PDF HERE](https://github.com/cimitrasoftware/cimitra_win_user_admin/raw/main/configure_and_import.pdf)
 
 
-
+**[ACTIONS AVAILABLE IN THIS SCRIPT]**
 Here are the actions you can take with this script. 
 
 1. Add User to Active Directory
@@ -182,10 +185,12 @@ AD_EXCLUDE_GROUP=35eddbe6-234f-4f94-af4c-efb0198e4247
 
 **DEPENDENCIES**
 
-The cimitra_active_directory_and_exchange.ps1 script has a dependency upon two other scripts: 
+The cimitra_win_user_admin.ps1 script has a dependency upon two other scripts: 
 
 config_reader.ps1
 SearchForUser.ps1
+merge.ps1
+setup.ps1
 
 These scripts should be located in the same directory as the cimitra_ad_exchange.ps1 script. 
 
