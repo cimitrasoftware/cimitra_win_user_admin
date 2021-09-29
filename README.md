@@ -90,6 +90,10 @@ The Cimitra Windows Adminsitration Practice allow the scripts against a differen
 1. This solution has only been tested using PowerShell 7, only use PowerShell 7 or greater. 
 2. The Windows computer that has the Cimitra Windows Administration Practice must have Microsoft's Remote Server Administration Tools installed. 
 3. A Cimitra Agent is deployed to the same Windows machine where the Cimitra Windows Administration Practice scripts are installed. 
+4. The Windows Computer where the Practice is installed must be logged in as a user with the same identity as the Remote Server's Admin user. For example: 
+
+- Remote Admin User: Administrator
+- Local Windows Computer User: Administrator
 
 **Configuration Steps**
 
