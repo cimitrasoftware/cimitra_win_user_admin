@@ -103,6 +103,14 @@ Run: ./setup.ps1
 
 If for some reason the document doesn't come up, here is a copy of that document" [DOWNLOAD PDF HERE](https://github.com/cimitrasoftware/cimitra_win_user_admin/raw/main/configure_and_import.pdf)
 
+**Cimitra Agent/Windows Service Configuration**
+The Cimitra Agent Windows Server needs to be configured to "Run As" the user you logged into the machine as, in Step #1 above. 
+1. Run the Windows Services App (services.msc)
+2. Find the Cimitra Agent
+3. Select Properties
+4. Choose the Log On tab
+5. Fill in the name and password of the user were logged in as in the Configuration Steps section
+6. Save the changes, and restart the Cimitra Agent Windows Service
 
 **[ACTIONS AVAILABLE IN THIS SCRIPT]**
 Here are the actions you can take with this script. 
