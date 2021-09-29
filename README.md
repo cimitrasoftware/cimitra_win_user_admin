@@ -118,7 +118,7 @@ The Cimitra Agent Windows Server needs to be configured to "Run As" the user you
 2. Find the Cimitra Agent
 3. Select Properties
 4. Choose the Log On tab
-5. Fill in the name and password of the user were logged in as in the Configuration Steps section
+5. Fill in the name and password of the user you were logged in as in the Configuration Steps section
 6. Save the changes, and restart the Cimitra Agent Windows Service
 
 **[ACTIONS AVAILABLE IN THIS SCRIPT]**
