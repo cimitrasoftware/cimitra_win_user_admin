@@ -48,9 +48,11 @@ This Will Work With PowerShell 5: .\cimitra_win_user_admin.ps1 -ContextIn "OU=AD
 This **Will NOT Work** With PowerShell 5: .\cimitra_win_user_admin.ps1 -ContextIn "OU=ADMIN STAFF,OU=USERS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=com"
 
 **[IMPORTING CIMITRA ACTIONS DESIGNED WITH THIS SCRIPT - POWERSHELL 7]**
+
 [DOWNLOAD PDF HERE](https://github.com/cimitrasoftware/cimitra_win_user_admin/raw/main/configure_and_import.pdf)
 
 **[IMPORTING CIMITRA ACTIONS DESIGNED WITH THIS SCRIPT - POWERSHELL 5]** Watch Animated GIF and Read Steps Below
+
 ![cimitra_win_admin_create_user](https://user-images.githubusercontent.com/55113746/127967407-2dd8ae8a-3db1-449f-a8ef-4b55a60ffc7d.gif)
 (Looping Animated GIF)
 1. Go to the Cimitra server: [app.cimitra.com](https://app.cimitra.com)
@@ -84,11 +86,13 @@ Initially released on July 30th, 2021
 The Cimitra Windows Adminsitration Practice allow the scripts against a different Active Directory Tree. For example, on a Windows 10 Workstation that doesn't even need to be in the same Windows domain as the Active Directory Tree to be administered. 
 
 **Prerequisties**
+
 1. This solution has only been tested using PowerShell 7, only use PowerShell 7 or greater. 
 2. The Windows computer that has the Cimitra Windows Administration Practice must have Microsoft's Remote Server Administration Tools installed. 
 3. A Cimitra Agent is deployed to the same Windows machine where the Cimitra Windows Administration Practice scripts are installed. 
 
 **Configuration Steps**
+
 1. Assuming the practice is already installed, log into Windows machine as a user who the Cimitra Agent will be configured to run the Cimitra Agent as that user in the Windows Services App. 
 2. Open up a PowerShell 7 session as an Administrator
 3. Go to the directory c:\cimitra\scripts\cimitra_win_user_admin
@@ -104,6 +108,7 @@ Run: ./setup.ps1
 If for some reason the document doesn't come up, here is a copy of that document" [DOWNLOAD PDF HERE](https://github.com/cimitrasoftware/cimitra_win_user_admin/raw/main/configure_and_import.pdf)
 
 **Cimitra Agent/Windows Service Configuration**
+
 The Cimitra Agent Windows Server needs to be configured to "Run As" the user you logged into the machine as, in Step #1 above. 
 1. Run the Windows Services App (services.msc)
 2. Find the Cimitra Agent
@@ -113,6 +118,7 @@ The Cimitra Agent Windows Server needs to be configured to "Run As" the user you
 6. Save the changes, and restart the Cimitra Agent Windows Service
 
 **[ACTIONS AVAILABLE IN THIS SCRIPT]**
+
 Here are the actions you can take with this script. 
 
 1. Add User to Active Directory
