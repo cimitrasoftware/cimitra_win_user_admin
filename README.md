@@ -1,38 +1,20 @@
-# cimitra_win_user_admin
+**Cimitra's Windows User Administration Practice**
+**50 Common Actions For Active Directory and Exchange Accounts**
 Tested and developed on a Windows 2016 and Windows 2019 Server
-Initially released on July 30th, 2021
 
 **Cimitra's Windows User Administration Practice**
 ![cimitra_win_user_admin](https://user-images.githubusercontent.com/55113746/127966108-9ac5b0e0-9b89-41aa-aa3d-ba83bc31307e.JPG)
 
-**Cimitra's Windows Administration Practice**
-Important Sections Below
+Cimitra's Windows Administration Practice is a handful of PowerShell scripts which allows for dozens of modifications you can make to Active Directory User accounts. For example, you can create a user in Active Directory, and set several of their attributes at the time of the user creation event.
 
-**[INSTALL]**
+Or you can modify only one or some attributes of an existing Active Directory User account.
 
-**[SCRIPT PURPOSE]**
+# INSTALL CIMITRA ACTIVE DIRECTORY PRACTICE SCRIPTS
 
-**[ONE POWERSHELL 5 LIMITATION]**
+**Prerequistes**
 
-**[IMPORTING CIMITRA ACTIONS DESIGNED WITH THIS SCRIPT]**
-
-**[EXCLUDE GROUP]**
-
-50 Actions For Active Directory and Exchange User Accounts
-
-**[INSTALL]**
-
-In a Powershell 7 or PowerShell 5 Terminal Session (PowerShell 7 is the best)
-
-Install the Cimitra's Windows Users Administration Script with the command below. Copy and paste command below in your PowerShell terminal on a Windows Server that has the Cimitra Agent for Windows installed. This same Windows Server should also be an Active Directory Domain Controller. 
-
-**iwr https://git.io/JBwuL | iex**
-
-**[SCRIPT PURPOSE]**
-
-This script allows for dozens of modifications you can make to Active Directory and Exchange User accounts. For example, you can create a user in Active Directory or Exchange, and set several of their attributes at the time of the user creation event. 
-
-Or you can modify only one or some attributes of an existing Active Directory or Exchange User account. 
+1. Identify the Windows host where you will install the Cimitra Active Directory Practice Scripts. If the Windows Server version is Windows Server 2016 or Windows 2019 Server you can install the Cimitra Activice Directory Practice Scripts on one of your Active Directory Domain controllers. If the Windows Server is Windows 2012, then you need to install the Cimitra Active Directory Practice Scripts on a Windows 10 workstation, or on a Windows 2016 or Windows 2019 Server that will conntect to the Active Directory system over on the Windows 2012 server. 
+2. Install PowerShell 7. Technically you might be able to use PowerShell 5, but we recommend PowerShell 7. 
 
 **[ONE POWERSHELL 5 LIMITATION]**
 
@@ -42,12 +24,21 @@ This OU Structure Will Work With PowerShell 5: **OU=ADMINISTRATION,OU=USERS,OU=K
 
 This OU Structure **Will NOT Work** With PowerShell 5: **OU=ADMIN STAFF,OU=USERS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=com**
 
+**Run Install Script**
+
+1. Run your PowerShell 7 session as Adminstrator
+
+2. Install the Cimitra's Windows Users Administration Script with the command below. Copy and paste command below in your PowerShell terminal on a Windows Host that has the Cimitra Agent for Windows already installed. If you have not deployed a Cimitra Agent to the Windows Host, then do that first. See cimitra.com/agent
+
+
+**iwr https://git.io/JBwuL | iex**
+
 
 **[RUNNING REMOTELY AGAINST ANOTHER ACTIVE DIRECTORY TREE]**
 
-The Cimitra Windows Adminsitration Practice allow the scripts to run on against a different Active Directory Tree. For example, on a Windows 10 Workstation that doesn't even need to be in the same Windows Domain as the Active Directory Tree to be administered. 
+The Cimitra Windows Adminsitration Practice allows the scripts to run against an Active Directory Tree where the Domain Controller is on a different Windows Host. For example, you can install the Cimtira Windows Adminsitration Practive on a Windows 10 Workstation that doesn't even need to be in the same Windows Domain as the Active Directory Tree to be administered. 
 
-**Prerequisties**
+**Prerequisties To Running Against A Remote Active Directory Domain Controller**
 
 1. This solution has only been tested using PowerShell 7, only use PowerShell 7 or greater. 
 2. The Windows computer that has the Cimitra Windows Administration Practice must have Microsoft's Remote Server Administration Tools (RSAT) installed. 
@@ -59,7 +50,7 @@ The Cimitra Windows Adminsitration Practice allow the scripts to run on against 
 
 **Configuration Steps**
 
-If you install the Cimitra Windows User Practice to a remote Windows machine, meaning the remote Windows machine is not a Windows Domain Controller, the installation routine above should detect that fact, and prompt you for additional connection details. After prompting for additional connection details, the installation should load a Wordpad document for you to finish out the configuration and import steps. If for some reason the document doesn't come up, here is a copy of that document" [DOWNLOAD PDF HERE](https://github.com/cimitrasoftware/cimitra_win_user_admin/raw/main/configure_and_import.pdf)
+If you install the Cimitra Windows User Practice to a remote Windows Host, meaning the remote Windows Host machine is not a Windows Domain Controller, the installation routine above should detect that fact, and prompt you for additional connection details. After prompting for additional connection details, the installation should load a Wordpad document for you to finish out the configuration and import steps. If for some reason the document doesn't come up, here is a copy of that document" [DOWNLOAD PDF HERE](https://github.com/cimitrasoftware/cimitra_win_user_admin/raw/main/configure_and_import.pdf)
 
 **Cimitra Agent/Windows Service Configuration**
 
@@ -71,7 +62,21 @@ The Cimitra Agent installed on the Windows host needs to be configured to "Run A
 5. Fill in the name and password of the user you were logged in as in the Configuration Steps section
 6. Save the changes, and restart the Cimitra Agent Windows Service
 
-**[ACTIONS AVAILABLE IN THIS SCRIPT]**
+# DEFINING AN EXCLUDE GROUP
+
+Users defined in a group designated as the "Exclude Group" cannot be modified by this script. The "Exclude Group" can be specified in a configuration file called "settings.cfg". The Exclude Group setting in the settings.cfg file looks like this: 
+
+   ***[Example Settings File]***
+   
+         AD_USER_CONTEXT=OU=USERS,OU=DEMO,OU=CIMITRA,DC=cimitrademo,DC=com
+         AD_SCRIPT_SLEEP_TIME=5
+         AD_EXCLUDE_GROUP=35eddbe6-234f-4f94-af4c-efb0198e4247
+
+The value should reflect the Globally Unity ID (GUID) of the Exclude Group. To get the GUID for an Active Directory Group, you can use the Cimitra Windows User Administration script with the following example syntax: 
+
+ **.\cimitra_win_user_admin.ps1 -GetGroupInfo "CN=CIMITRA_EXCLUDE,OU=GROUPS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=local"**
+
+# ACTIONS AVAILABLE IN THIS SCRIPT
 
 Here are the actions you can take with this script. 
 
@@ -130,7 +135,7 @@ NOTE: When using a Template User Object the following attributes will also be up
 The HomeDirectory attribute will reflect the SamAccountName of the new user if the SamAccountName is in the Template User's HomeDrive
 The User will be added to the same Group Memberships that the Template User Object is a member of (Except the Cimitra Exclude Group)
 
-**ADDITIONAL FUNCTIONALITY**
+# ADDITIONAL FUNCTIONALITY
 
 **[USER SEARCH]**
 
@@ -143,16 +148,6 @@ If there are two users with the same First and Last name, then the script will l
 The "Default Context" can be specified in a configuration file called "settings.cfg". The Default Context setting in the settings.cfg file looks like this: 
 
 AD_USER_CONTEXT=OU=DEMOUSERS,OU=DEMO,DC=cimitrademo,DC=com
-
-**[EXCLUDE GROUP]**
-
-Users defined in a group designated as the "Exclude Group" cannot be modified by this script. The "Exclude Group" can be specified in a configuration file called "settings.cfg". The Exclude Group setting in the settings.cfg file looks like this: 
-
-AD_EXCLUDE_GROUP=35eddbe6-234f-4f94-af4c-efb0198e4247
-
-The value should reflect the Globally Unity ID (GUID) of the Exclude Group. To get the GUID for an Active Directory Group, you can use the Cimitra Windows User Administration script with the following example syntax: 
-
- .\cimitra_win_user_admin.ps1 -GetGroupInfo "CN=CIMITRA_EXCLUDE,OU=GROUPS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=local"
 
 **DEPENDENCIES**
 
