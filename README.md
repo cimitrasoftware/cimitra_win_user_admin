@@ -42,8 +42,6 @@ This OU Structure Will Work With PowerShell 5: **OU=ADMINISTRATION,OU=USERS,OU=K
 
 This OU Structure **Will NOT Work** With PowerShell 5: **OU=ADMIN STAFF,OU=USERS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=com**
 
-**[ADDING A USER TO ACTIVE DIRECTORY]** Watch Animated GIF, And - Read the written steps below
-
 
 **[RUNNING REMOTELY AGAINST ANOTHER ACTIVE DIRECTORY TREE]**
 
