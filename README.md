@@ -28,7 +28,7 @@ This OU Structure **Will NOT Work** With PowerShell 5: **OU=ADMIN STAFF,OU=USERS
 
 1. Run your PowerShell 7 session as Adminstrator
 
-2. Install the Cimitra's Windows Users Administration Script with the command below. Copy and paste command below in your PowerShell terminal on a Windows Host that has the Cimitra Agent for Windows already installed. If you have not deployed a Cimitra Agent to the Windows Host, then do that first. See cimitra.com/agent
+2. Install the Cimitra's Windows Users Administration Script with the command below. Copy and paste the command below in your PowerShell terminal on a Windows Host that has the Cimitra Agent for Windows already installed. If you have not deployed a Cimitra Agent to the Windows Host, then do that first. See cimitra.com/agent
 
 
 **iwr https://git.io/JBwuL | iex**
@@ -45,8 +45,10 @@ The Cimitra Windows Adminsitration Practice allows the scripts to run against an
 3. A Cimitra Agent is deployed to the same Windows machine where the Cimitra Windows Administration Practice scripts are installed. 
 4. The Windows Computer where the Practice is installed must be logged in as a user with the same identity as the Remote Server's Admin user. For example: 
 
-- Remote Admin User: Administrator
-- Local Windows Computer User: Administrator - Google how to enable the built-in "Administrator" user on any Windows 10/11 workstation. 
+- Remote Admin User: **Administrator**
+- Local Windows Computer User: **Administrator** - Google how to enable the built-in "Administrator" user on any Windows 10/11 workstation. 
+
+NOTE: Even if the Windows Host is in a totally different Windows Domain was the Windows Host that runs Active Directory, 
 
 **Configuration Steps**
 
