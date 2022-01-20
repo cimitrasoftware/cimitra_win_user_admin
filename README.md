@@ -50,17 +50,23 @@ The Cimitra Windows Adminsitration Practice allows the scripts to run against an
 
 **Configuration Steps**
 
-If you install the Cimitra Windows User Practice to a remote Windows Host, meaning the remote Windows Host machine is not a Windows Domain Controller, the installation routine above should detect that fact, and prompt you for additional connection details. After prompting for additional connection details, the installation should load a Wordpad document for you to finish out the configuration and import steps. If for some reason the document doesn't come up, here is a copy of that document" [DOWNLOAD PDF HERE](https://github.com/cimitrasoftware/cimitra_win_user_admin/raw/main/configure_and_import.pdf)
+If you install the Cimitra Windows User Practice to a remote Windows Host, meaning the remote Windows Host machine is not a Windows Domain Controller, the installation routine above should detect that fact, and prompt you for additional connection details. 
 
 **Cimitra Agent/Windows Service Configuration**
 
-The Cimitra Agent installed on the Windows host needs to be configured to "Run As" the user you logged into the machine as when you did the installation command above. 
+The Cimitra Agent installed on the Windows host needs to be configured to "Run As" the user you logged into the Windows Host machine as when you did the installation command above. 
 1. Run the Windows Services App (services.msc)
 2. Find the Cimitra Agent
 3. Select Properties
 4. Choose the Log On tab
 5. Fill in the name and password of the user you were logged in as in the Configuration Steps section
 6. Save the changes, and restart the Cimitra Agent Windows Service
+
+# IMPORTING PRE-MADE CIMITRA ACTIONS THAT USE THE CIMITRA WINDOWS ADMINISTRATION PRACTICE SCRIPTS
+
+After prompting for additional connection details, the installation should load a Wordpad document for you to finish out the configuration and import steps. If for some reason the document doesn't come up, here is a copy of that document" [DOWNLOAD PDF HERE](https://github.com/cimitrasoftware/cimitra_win_user_admin/raw/main/configure_and_import.pdf)
+
+
 
 # DEFINING AN EXCLUDE GROUP
 
