@@ -1,4 +1,7 @@
 # cimitra_win_user_admin
+Tested and developed on a Windows 2016 and Windows 2019 Server
+Initially released on July 30th, 2021
+
 **Cimitra's Windows User Administration Practice**
 ![cimitra_win_user_admin](https://user-images.githubusercontent.com/55113746/127966108-9ac5b0e0-9b89-41aa-aa3d-ba83bc31307e.JPG)
 
@@ -25,14 +28,6 @@ Install the Cimitra's Windows Users Administration Script with the command below
 
 **iwr https://git.io/JBwuL | iex**
 
-Go to the directory c:\cimitra\scripts\cimitra_win_user_admin
-
-cd c:\cimitra\scripts\cimitra_win_user_admin
-
-Run: ./cimitra_win_user_admin.ps1
-
-Edit the settings.cfg file to specify the Exclude Group. See more about the Exclude Group below. 
-
 **[SCRIPT PURPOSE]**
 
 This script allows for dozens of modifications you can make to Active Directory and Exchange User accounts. For example, you can create a user in Active Directory or Exchange, and set several of their attributes at the time of the user creation event. 
@@ -41,79 +36,36 @@ Or you can modify only one or some attributes of an existing Active Directory or
 
 **[ONE POWERSHELL 5 LIMITATION]**
 
-If you have an Active Directory OU with spaces anywhere in the path of the OU, then you must use must make sure to install PowerShell 7 in order to use this script. 
+If you have an Active Directory OU with **spaces** anywhere in the path of the OU, then you **must make sure to install PowerShell 7** in order to use this script. 
 
-This Will Work With PowerShell 5: .\cimitra_win_user_admin.ps1 -ContextIn "OU=ADMINISTRATION,OU=USERS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=com"
+This OU Structure Will Work With PowerShell 5: **OU=ADMINISTRATION,OU=USERS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=com**
 
-This **Will NOT Work** With PowerShell 5: .\cimitra_win_user_admin.ps1 -ContextIn "OU=ADMIN STAFF,OU=USERS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=com"
-
-**[IMPORTING CIMITRA ACTIONS DESIGNED WITH THIS SCRIPT - POWERSHELL 7]**
-
-[DOWNLOAD PDF HERE](https://github.com/cimitrasoftware/cimitra_win_user_admin/raw/main/configure_and_import.pdf)
-
-**[IMPORTING CIMITRA ACTIONS DESIGNED WITH THIS SCRIPT - POWERSHELL 5]** Watch Animated GIF and Read Steps Below
-
-![cimitra_win_admin_create_user](https://user-images.githubusercontent.com/55113746/127967407-2dd8ae8a-3db1-449f-a8ef-4b55a60ffc7d.gif)
-(Looping Animated GIF)
-1. Go to the Cimitra server: [app.cimitra.com](https://app.cimitra.com)
-2. Log in as: import@cimitra.com | Password: 123
-3. Look at any Cimitra Action you would like to import into your Cimitra System
-4. Copy the IMPORT URL to the clipboard
-5. In your own Cimitra System select Create | Import
-6. Copy in the URL from step #4 
-7. Select Import
-8. Associate the Action with a Cimitra Agent deployed on an Active Directory Domain Controller
-9. Make changes to imported Actions, specifically related to the DIVISION (Context) and GroupGUID parameters etc. 
+This OU Structure **Will NOT Work** With PowerShell 5: **OU=ADMIN STAFF,OU=USERS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=com**
 
 **[ADDING A USER TO ACTIVE DIRECTORY]** Watch Animated GIF, And - Read the written steps below
-
-Here is how you could create a user in Active Directory, and add several attributes to that user. 
-
-.\cimitra_win_user_admin.ps1 -AddToActiveDirectory -FirstName "Bob" -LastName "Jones" -ContextIn "OU=ADMINISTRATION,OU=USERS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=com" -SamAccountName "bjones" -Title "Controller" -DefaultPassword "abc_4242" -ManagerFirstName "Steve" -ManagerLastName "McQueen" -ManagerContext "OU=ADMINISTRATION,OU=DEMOUSERS,DC=cimitrademo,DC=com" -Description "Accounting Department Employee" -OfficePhone "801-111-2222" -MobilePhone "801-333-3333" -ExpirationDate "02/20/2035"
-
-**[ADDING A USER TO ACTIVE DIRECTORY FROM A TEMPLATE USER]**
-
-Here is how you could create a user in Active Directory from a Template User Object, and add several attributes to that user. 
-
-.\cimitra_win_user_admin.ps1 -NewUserTemplate "CN=_TEMPLATE_ADMINISTRATION,OU=ADMINISTRATION,OU=USERS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=com" -NewUserTemplateProperties "City,Company,Country,HomeDirectory,HomeDrive,MemberOf,ScriptPath,State,streetAddress,postalCode,title,department,company,Manager,wWWHomePage,proxyAddresses" -FirstName "Bob" -LastName "Jones" -SamAccountName "bjones" -Title "Controller" -UserPassword "abc_4242" -ManagerFirstName "Steve" -ManagerLastName "McQueen" -ManagerContext "OU=ADMINISTRATION,OU=DEMOUSERS,DC=cimitrademo,DC=com" -Description "Accounting Department Employee" -OfficePhone "801-111-2222" -MobilePhone "801-333-3333" -ExpirationDate "02/20/2035"
-
-Tested and developed on a Windows 2016 and Windows 2019 Server
-Initially released on July 30th, 2021
 
 
 **[RUNNING REMOTELY AGAINST ANOTHER ACTIVE DIRECTORY TREE]**
 
-The Cimitra Windows Adminsitration Practice allow the scripts against a different Active Directory Tree. For example, on a Windows 10 Workstation that doesn't even need to be in the same Windows domain as the Active Directory Tree to be administered. 
+The Cimitra Windows Adminsitration Practice allow the scripts to run on against a different Active Directory Tree. For example, on a Windows 10 Workstation that doesn't even need to be in the same Windows Domain as the Active Directory Tree to be administered. 
 
 **Prerequisties**
 
 1. This solution has only been tested using PowerShell 7, only use PowerShell 7 or greater. 
-2. The Windows computer that has the Cimitra Windows Administration Practice must have Microsoft's Remote Server Administration Tools installed. 
+2. The Windows computer that has the Cimitra Windows Administration Practice must have Microsoft's Remote Server Administration Tools (RSAT) installed. 
 3. A Cimitra Agent is deployed to the same Windows machine where the Cimitra Windows Administration Practice scripts are installed. 
 4. The Windows Computer where the Practice is installed must be logged in as a user with the same identity as the Remote Server's Admin user. For example: 
 
 - Remote Admin User: Administrator
-- Local Windows Computer User: Administrator
+- Local Windows Computer User: Administrator - Google how to enable the built-in "Administrator" user on any Windows 10/11 workstation. 
 
 **Configuration Steps**
 
-1. Assuming the practice is already installed, log into Windows machine as a user who the Cimitra Agent will be configured to run the Cimitra Agent as that user in the Windows Services App. 
-2. Open up a PowerShell 7 session as an Administrator
-3. Go to the directory c:\cimitra\scripts\cimitra_win_user_admin
-
-cd c:\cimitra\scripts\cimitra_win_user_admin
-
-Run: ./setup.ps1
-
-4. Choose the option to "Define a Remote Active Directory Tree"
-5. When the setup wizard runs, you should have a new settings file in c:\cimitra\scripts\cimitra_win_user_admin\cfg
-6. If all is successful, then a document should come up that tells you how to go through a process of Importing Actions, Saving Off Parameters, And Merging the Saved Parameters into a slew of Cimitra Actions that you can import for Administering Active Directory through Cimitra. 
-
-If for some reason the document doesn't come up, here is a copy of that document" [DOWNLOAD PDF HERE](https://github.com/cimitrasoftware/cimitra_win_user_admin/raw/main/configure_and_import.pdf)
+If you install the Cimitra Windows User Practice to a remote Windows machine, meaning the remote Windows machine is not a Windows Domain Controller, the installation routine above should detect that fact, and prompt you for additional connection details. After prompting for additional connection details, the installation should load a Wordpad document for you to finish out the configuration and import steps. If for some reason the document doesn't come up, here is a copy of that document" [DOWNLOAD PDF HERE](https://github.com/cimitrasoftware/cimitra_win_user_admin/raw/main/configure_and_import.pdf)
 
 **Cimitra Agent/Windows Service Configuration**
 
-The Cimitra Agent Windows Server needs to be configured to "Run As" the user you logged into the machine as, in Step #1 above. 
+The Cimitra Agent installed on the Windows host needs to be configured to "Run As" the user you logged into the machine as when you did the installation command above. 
 1. Run the Windows Services App (services.msc)
 2. Find the Cimitra Agent
 3. Select Properties
@@ -199,6 +151,10 @@ AD_USER_CONTEXT=OU=DEMOUSERS,OU=DEMO,DC=cimitrademo,DC=com
 Users defined in a group designated as the "Exclude Group" cannot be modified by this script. The "Exclude Group" can be specified in a configuration file called "settings.cfg". The Exclude Group setting in the settings.cfg file looks like this: 
 
 AD_EXCLUDE_GROUP=35eddbe6-234f-4f94-af4c-efb0198e4247
+
+The value should reflect the Globally Unity ID (GUID) of the Exclude Group. To get the GUID for an Active Directory Group, you can use the Cimitra Windows User Administration script with the following example syntax: 
+
+ .\cimitra_win_user_admin.ps1 -GetGroupInfo "CN=CIMITRA_EXCLUDE,OU=GROUPS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=local"
 
 **DEPENDENCIES**
 
