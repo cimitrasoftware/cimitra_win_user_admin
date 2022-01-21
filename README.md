@@ -28,7 +28,7 @@ This OU Structure **Will NOT Work** With PowerShell 5: **OU=ADMIN STAFF,OU=USERS
 
 1. Run your PowerShell 7 session as Adminstrator
 
-2. Install the Cimitra's Windows Users Administration Script with the command below. Copy and paste the command below in your PowerShell terminal on a Windows Host that has the Cimitra Agent for Windows already installed. If you have not deployed a Cimitra Agent to the Windows Host, then do that first. See cimitra.com/agent
+2. Install Cimitra's Windows User Administration Script with the command below. Copy and paste the command below in your PowerShell terminal on a Windows Host that has the Cimitra Agent for Windows already installed. If you have not deployed a Cimitra Agent to the Windows Host, then do that first. See cimitra.com/agent
 
 
 **iwr https://git.io/JBwuL | iex**
@@ -36,32 +36,33 @@ This OU Structure **Will NOT Work** With PowerShell 5: **OU=ADMIN STAFF,OU=USERS
 
 **[RUNNING REMOTELY AGAINST ANOTHER ACTIVE DIRECTORY TREE]**
 
-The Cimitra Windows Adminsitration Practice allows the scripts to run against an Active Directory Tree where the Domain Controller is on a different Windows Host. For example, you can install the Cimtira Windows Adminsitration Practive on a Windows 10 Workstation that doesn't even need to be in the same Windows Domain as the Active Directory Tree to be administered. 
+The Cimitra Windows User Adminsitration Practice allows for the scripts to run against an Active Directory Tree where the Domain Controller is on a different Windows Host. For example, you can install the Cimtira Windows Administration Practice on a Windows 10 Workstation that doesn't even need to be in the same Windows Domain as the Active Directory Tree to be administered. 
 
 **Prerequisties To Running Against A Remote Active Directory Domain Controller**
 
 1. This solution has only been tested using PowerShell 7, only use PowerShell 7 or greater. 
-2. The Windows computer that has the Cimitra Windows Administration Practice must have Microsoft's Remote Server Administration Tools (RSAT) installed. 
-3. A Cimitra Agent is deployed to the same Windows machine where the Cimitra Windows Administration Practice scripts are installed. 
+2. The Windows computer that has the Cimitra Windows User Administration Practice must have Microsoft's Remote Server Administration Tools (RSAT) installed. 
+3. A Cimitra Agent is deployed to the same Windows machine where the Cimitra Windows User Administration Practice scripts are installed. 
 4. The Windows Computer where the Practice is installed must be logged in as a user with the same identity as the Remote Server's Admin user. For example: 
 
-- Remote Admin User: **Administrator**
+- Remote Admin User in Active Directory: **Administrator**
 - Local Windows Computer User: **Administrator** - Google how to enable the built-in "Administrator" user on any Windows 10/11 workstation. 
 
-NOTE: Even if the Windows Host is in a totally different Windows Domain was the Windows Host that runs Active Directory, 
+NOTE: Even if the Windows Host where you install the Cimitra Windows User Administration practice is in a totally different Windows Domain than the Windows Host that runs Active Directory, this scenario works just fine. 
 
 **Configuration Steps**
 
-If you install the Cimitra Windows User Practice to a remote Windows Host, meaning the remote Windows Host machine is not a Windows Domain Controller, the installation routine above should detect that fact, and prompt you for additional connection details. 
+If you install the Cimitra Windows User Practice to a remote Windows Host, meaning the remote Windows Host machine is not a Windows Domain Controller, the installation routine above will detect that fact, and prompt you for additional connection details. 
 
 **Cimitra Agent/Windows Service Configuration**
 
-The Cimitra Agent installed on the Windows host needs to be configured to "Run As" the user you logged into the Windows Host machine as when you did the installation command above. 
+The Cimitra Agent installed on the Windows host needs to be configured to "Run As" the same user you logged into the Windows Host machine as when you did the installation command above. Here is how you run the Cimitra Agent as a specific user.
+
 1. Run the Windows Services App (services.msc)
 2. Find the Cimitra Agent
 3. Select Properties
-4. Choose the Log On tab
-5. Fill in the name and password of the user you were logged in as in the Configuration Steps section
+4. Choose the **Log On** tab
+5. Fill in the name and password of the user you were logged in as in the Configuration Steps section above
 6. Save the changes, and restart the Cimitra Agent Windows Service
 
 # IMPORTING PRE-MADE CIMITRA ACTIONS THAT USE THE CIMITRA WINDOWS ADMINISTRATION PRACTICE SCRIPTS
