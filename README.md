@@ -94,17 +94,19 @@ After prompting for additional connection details, the installation should load 
 # DEFINING AN EXCLUDE GROUP
 ------------------
 
-Users defined in a group designated as the "Exclude Group" cannot be modified by this script. The "Exclude Group" can be specified in a configuration file called "settings.cfg". The Exclude Group setting in the settings.cfg file looks like this: 
+Users defined in a group designated as the "Exclude Group" cannot be modified by this script. 
+
+The "Exclude Group" can be specified in a configuration file called "settings.cfg". Or if you are installed the Cimitra Active Directory Practice on a proxy host, such as a Windows 10 workstation, the settings file is in the c:\cimitra\scripts\cimitra_win_user_admin\cfg directory. The name of the settings file is the name you gave it. For example "adtest.txt". The Exclude Group setting in the settings file looks like this: 
 
    ***[Example Settings File]***
    
          AD_USER_CONTEXT=OU=USERS,OU=DEMO,OU=CIMITRA,DC=cimitrademo,DC=com
          AD_SCRIPT_SLEEP_TIME=5
-         AD_EXCLUDE_GROUP=**CN=CIMITRA_EXCLUDE,OU=GROUPS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=local**
+         AD_EXCLUDE_GROUP=CN=CIMITRA_EXCLUDE,OU=GROUPS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=local
 
-The value should reflect the Globally Unity ID (GUID) of the Exclude Group. To get the GUID for an Active Directory Group, you can use the Cimitra Windows User Administration script with the following example syntax: 
+The value should reflect the fully distinguished name of the Exclude Group. 
 
-**./cimitra_win_user_admin.ps1 -GetGroupInfo "CN=CIMITRA_EXCLUDE,OU=GROUPS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=local"**
+![cimitra_exclude_group](https://user-images.githubusercontent.com/55113746/150994029-f3f4c197-2c6f-4626-becb-1b12797861b8.JPG)
 
 ------------------
 
