@@ -87,7 +87,7 @@ The Cimitra Agent installed on the Windows host needs to be configured to "Run A
 
 After prompting for additional connection details, the installation should load a Wordpad document for you to finish out the configuration and import steps. If for some reason the document doesn't come up, here is a copy of that document" 
 
-# [DOWNLOAD THE IMPORT DOCUMEMTATION PDF HERE](https://github.com/cimitrasoftware/cimitra_win_user_admin/raw/main/configure_and_import.pdf)
+**[DOWNLOAD THE IMPORT DOCUMEMTATION PDF HERE](https://github.com/cimitrasoftware/cimitra_win_user_admin/raw/main/configure_and_import.pdf)**
 
 ------------------
 
