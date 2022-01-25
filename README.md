@@ -11,9 +11,7 @@ Cimitra's Windows Administration Practice is a handful of PowerShell scripts whi
 
 Or you can modify only one or some attributes of an existing Active Directory User account.
 
-# INSTALL CIMITRA ACTIVE DIRECTORY PRACTICE SCRIPTS
-
-**PREREQUISITES**
+# PREREQUISITES
 
 ------------------
 
@@ -31,7 +29,7 @@ This OU Structure **Will NOT Work** With PowerShell 5: **OU=ADMIN STAFF,OU=USERS
 
 ------------------
 
-**INSTALLATION**
+# INSTALLATION
 
 ------------------
 
@@ -47,7 +45,6 @@ This OU Structure **Will NOT Work** With PowerShell 5: **OU=ADMIN STAFF,OU=USERS
 ------------------
 
 **[RUNNING REMOTELY AGAINST ANOTHER ACTIVE DIRECTORY TREE]**
-
 ------------------
 
 The method explained below are required in the following scenarios: 
@@ -86,13 +83,16 @@ The Cimitra Agent installed on the Windows host needs to be configured to "Run A
 ------------------
 
 # IMPORTING PRE-MADE CIMITRA ACTIONS THAT USE THE CIMITRA WINDOWS ADMINISTRATION PRACTICE SCRIPTS
+------------------
 
 After prompting for additional connection details, the installation should load a Wordpad document for you to finish out the configuration and import steps. If for some reason the document doesn't come up, here is a copy of that document" 
 
 [DOWNLOAD THE IMPORT DOCUMEMTATION PDF HERE](https://github.com/cimitrasoftware/cimitra_win_user_admin/raw/main/configure_and_import.pdf)
 
+------------------
 
 # DEFINING AN EXCLUDE GROUP
+------------------
 
 Users defined in a group designated as the "Exclude Group" cannot be modified by this script. The "Exclude Group" can be specified in a configuration file called "settings.cfg". The Exclude Group setting in the settings.cfg file looks like this: 
 
@@ -105,8 +105,10 @@ Users defined in a group designated as the "Exclude Group" cannot be modified by
 The value should reflect the Globally Unity ID (GUID) of the Exclude Group. To get the GUID for an Active Directory Group, you can use the Cimitra Windows User Administration script with the following example syntax: 
 
  **.\cimitra_win_user_admin.ps1 -GetGroupInfo "CN=CIMITRA_EXCLUDE,OU=GROUPS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=local"**
+------------------
 
 # ACTIONS AVAILABLE IN THIS SCRIPT
+------------------
 
 Here are the actions you can take with this script. 
 
@@ -164,8 +166,10 @@ Here are the actions you can take with this script.
 NOTE: When using a Template User Object the following attributes will also be updated: 
 The HomeDirectory attribute will reflect the SamAccountName of the new user if the SamAccountName is in the Template User's HomeDrive
 The User will be added to the same Group Memberships that the Template User Object is a member of (Except the Cimitra Exclude Group)
+------------------
 
 # ADDITIONAL FUNCTIONALITY
+------------------
 
 **[USER SEARCH]**
 
@@ -200,3 +204,4 @@ In order to encrypt the password file needed for the -ExchangeSecurePasswordFile
 https://4sysops.com/archives/encrypt-a-password-with-powershell/
 
 The ExchangePowerShell module from Microsoft must be installed in order to add and change Exchange User accounts. 
+------------------
