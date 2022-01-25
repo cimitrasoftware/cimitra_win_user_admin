@@ -44,7 +44,7 @@ This OU Structure **Will NOT Work** With PowerShell 5: **OU=ADMIN STAFF,OU=USERS
 
 ------------------
 
-**[RUNNING REMOTELY AGAINST ANOTHER ACTIVE DIRECTORY TREE]**
+**[RUNNING REMOTELY AGAINST AN ACTIVE DIRECTORY TREE]**
 ------------------
 
 The method explained below are required in the following scenarios: 
