@@ -13,10 +13,13 @@ Or you can modify only one or some attributes of an existing Active Directory Us
 
 # INSTALL CIMITRA ACTIVE DIRECTORY PRACTICE SCRIPTS
 
-**Prerequistes**
+**PREREQUISITES**
 
-1. Identify the Windows host where you will install the Cimitra Active Directory Practice Scripts. If the Windows Server version is Windows Server 2016 or Windows 2019 Server you can install the Cimitra Activice Directory Practice Scripts on one of your Active Directory Domain controllers. If the Windows Server is Windows 2012, then you need to install the Cimitra Active Directory Practice Scripts on a Windows 10 workstation, or on a Windows 2016 or Windows 2019 Server that will conntect to the Active Directory system over on the Windows 2012 server. 
-2. Install PowerShell 7. Technically you might be able to use PowerShell 5, but we recommend PowerShell 7. 
+------------------
+
+1. **Identify the Windows host** where you will install the Cimitra Active Directory Practice Scripts. If the Windows Server version is Windows Server 2016 or Windows 2019 Server you can install the Cimitra Activice Directory Practice Scripts on one of your Active Directory Domain controllers. If the Windows Server is Windows 2012, then you need to install the Cimitra Active Directory Practice Scripts on a Windows 10 workstation, or on a Windows 2016 or Windows 2019 Server that will conntect to the Active Directory system over on the Windows 2012 server. 
+
+2. **Install PowerShell 7.** Technically you might be able to use PowerShell 5, but we recommend PowerShell 7. 
 
 **[ONE POWERSHELL 5 LIMITATION]**
 
@@ -26,17 +29,31 @@ This OU Structure Will Work With PowerShell 5: **OU=ADMINISTRATION,OU=USERS,OU=K
 
 This OU Structure **Will NOT Work** With PowerShell 5: **OU=ADMIN STAFF,OU=USERS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=com**
 
+------------------
+
+**INSTALLATION**
+
+------------------
+
 **Run Install Script**
 
-1. Run your PowerShell 7 session as Adminstrator
+1. Run your **PowerShell 7 terminal as Adminstrator**
 
 2. Install Cimitra's Windows User Administration Script with the command below. Copy and paste the command below in your PowerShell terminal on a Windows Host that has the Cimitra Agent for Windows already installed. If you have not deployed a Cimitra Agent to the Windows Host, then do that first. See cimitra.com/agent
 
 
 **iwr https://git.io/JBwuL | iex**
 
+------------------
 
 **[RUNNING REMOTELY AGAINST ANOTHER ACTIVE DIRECTORY TREE]**
+
+------------------
+
+The method explained below are required in the following scenarios: 
+
+1. The Windows Server that hosts Active Directory is Windows Server 2012
+2. You would rather install the Cimitra Windows User Administration Practice on different Windows host such as a Windows 10 Workstation. For example, a Cimitra customer thathas multiple Active Directory systems they want to manage from a central Windows 10 host. 
 
 The Cimitra Windows User Adminsitration Practice allows for the scripts to run against an Active Directory Tree where the Domain Controller is on a different Windows Host. For example, you can install the Cimtira Windows Administration Practice on a Windows 10 Workstation that doesn't even need to be in the same Windows Domain as the Active Directory Tree to be administered. 
 
@@ -66,13 +83,13 @@ The Cimitra Agent installed on the Windows host needs to be configured to "Run A
 4. Choose the **Log On** tab
 5. Fill in the name and password of the user you were logged in as in the Configuration Steps section above
 6. Save the changes, and restart the Cimitra Agent Windows Service
+------------------
 
 # IMPORTING PRE-MADE CIMITRA ACTIONS THAT USE THE CIMITRA WINDOWS ADMINISTRATION PRACTICE SCRIPTS
 
 After prompting for additional connection details, the installation should load a Wordpad document for you to finish out the configuration and import steps. If for some reason the document doesn't come up, here is a copy of that document" 
 
 [DOWNLOAD THE IMPORT DOCUMEMTATION PDF HERE](https://github.com/cimitrasoftware/cimitra_win_user_admin/raw/main/configure_and_import.pdf)
-
 
 
 # DEFINING AN EXCLUDE GROUP
