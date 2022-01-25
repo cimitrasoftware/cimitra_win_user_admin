@@ -104,7 +104,7 @@ Users defined in a group designated as the "Exclude Group" cannot be modified by
 
 The value should reflect the Globally Unity ID (GUID) of the Exclude Group. To get the GUID for an Active Directory Group, you can use the Cimitra Windows User Administration script with the following example syntax: 
 
-./cimitra_win_user_admin.ps1 -GetGroupInfo "CN=CIMITRA_EXCLUDE,OU=GROUPS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=local"
+**./cimitra_win_user_admin.ps1 -GetGroupInfo "CN=CIMITRA_EXCLUDE,OU=GROUPS,OU=KCC,OU=DEMOSYSTEM,DC=cimitrademo,DC=local"
 
 ------------------
 
