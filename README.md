@@ -4,6 +4,8 @@
 Tested and developed on a Windows 2016 and Windows 2019 Server
 
 ![cimitra_win_user_admin](https://user-images.githubusercontent.com/55113746/127966108-9ac5b0e0-9b89-41aa-aa3d-ba83bc31307e.JPG)
+**[VIDEO DOCUMENTATION](https://youtu.be/zu5NRI5gvU4)(https://user-images.githubusercontent.com/55113746/150984050-5d76dce2-d2b9-4c2b-a6c5-871ad7f1b6ff.png)**
+
 **[VIDEO DOCUMENTATION](https://youtu.be/zu5NRI5gvU4)**
 
 Cimitra's Windows Administration Practice is a handful of PowerShell scripts which allows for dozens of modifications you can make to Active Directory User accounts. For example, you can create a user in Active Directory, and set several of their attributes at the time of the user creation event.
